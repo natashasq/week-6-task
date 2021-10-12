@@ -1,0 +1,225 @@
+@use "themeSetup.scss";
+@use "fonts.scss";
+@use "responsive.scss";
+
+* {
+  font-family: "Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  max-width: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include themeSetup.theme() {
+    background-color: themeSetup.theme-get("background-color");
+  }
+}
+
+.header {
+  padding: 28px 0 32px 0;
+  margin: 0 24px;
+  width: 327px;
+  display: flex;
+  justify-content: space-between;
+  @include responsive.desktopScreen {
+    padding-top: 96px;
+    margin: 0 auto;
+    width: 540px;
+  }
+
+  &__logo {
+    @include fonts.h1;
+  }
+  &__theme {
+    display: flex;
+  }
+  &__theme-text {
+    @include fonts.body;
+    text-transform: uppercase;
+    margin-right: 21px;
+    margin-bottom: 5px;
+    align-self: end;
+  }
+  &__theme-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__theme-toggle-numbers {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7px 5px 7px;
+  }
+  &__theme-toggle-no {
+    @include fonts.body;
+  }
+  &__theme-toggle-switch {
+    border-radius: 13px;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("calc-background-color");
+    }
+    height: 26px;
+    width: 71px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 5px;
+  }
+  &__theme-toggle-btn {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("switch-color");
+    }
+    &:hover {
+      cursor: pointer;
+      @include themeSetup.theme() {
+        background-color: themeSetup.theme-get("btn-3-hover-color");
+      }
+    }
+  }
+  &__theme-toggle-btn--display-none {
+    display: none;
+  }
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  margin: 0 24px 31px 24px;
+  width: 327px;
+  @include responsive.desktopScreen {
+    margin: 0 40px 90px 40px;
+    width: 540px;
+  }
+  &__display {
+    border-radius: 10px;
+    overflow: auto;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("calc-background-color");
+    }
+    width: 100%;
+    margin-bottom: 24px;
+    @include fonts.h1;
+    padding: 26px 24px;
+    @include responsive.desktopScreen {
+      font-size: 48px;
+      line-height: 54px;
+      padding: 32px 32px 36px;
+    }
+  }
+  &__buttons-container {
+    padding: 24px;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("calc-background-color");
+    }
+    border-radius: 10px;
+    @include responsive.desktopScreen {
+      padding: 32px;
+    }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 13px;
+    row-gap: 13px;
+    margin-bottom: 13px;
+  }
+  &__btn {
+    height: 64px;
+    width: 60px;
+    padding: 10px 10px 14px 10px;
+    @include fonts.btn;
+    border: none;
+    border-radius: 10px;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("btn-1-color");
+      box-shadow: themeSetup.theme-get("box-shadow");
+      color: themeSetup.theme-get("btn-text-color");
+    }
+    &:hover {
+      cursor: pointer;
+      @include themeSetup.theme() {
+        background-color: themeSetup.theme-get("btn-1-hover-color");
+      }
+    }
+    @include responsive.desktopScreen {
+      width: 101px;
+    }
+  }
+  &__buttons-big {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+    column-gap: 13px;
+  }
+}
+
+.-btn-2 {
+  @include themeSetup.theme() {
+    background-color: themeSetup.theme-get("btn-2-color");
+    box-shadow: themeSetup.theme-get("box-shadow-2");
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  &:hover {
+    cursor: pointer;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("btn-2-hover-color");
+    }
+  }
+}
+.-btn-3 {
+  @include themeSetup.theme() {
+    background-color: themeSetup.theme-get("btn-3-color");
+    box-shadow: themeSetup.theme-get("box-shadow-3");
+    color: white;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+    @include themeSetup.theme() {
+      background-color: themeSetup.theme-get("btn-3-hover-color");
+    }
+  }
+}
+
+.-reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+}
+
+.-is-pressed {
+  @include themeSetup.theme() {
+    background-color: themeSetup.theme-get("is-pressed-color");
+    color: white;
+  }
+}
+
+.-display-none {
+  display: none;
+}
+.-lightTheme {
+margin-left: 21px;
+}
+
+.-darkTheme{
+  margin-left: 42px;
+  }
+

@@ -1,0 +1,41 @@
+@use "themeSetup.scss";
+
+@mixin h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: right;
+  letter-spacing: -0.533333px;
+  @include themeSetup.theme() {
+    color: themeSetup.theme-get("text-color");
+  }
+}
+
+@mixin btn {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 31px;
+  letter-spacing: -0.466667px;
+  @include themeSetup.theme() {
+    color: themeSetup.theme-get("btn-text-color");
+  }
+}
+
+@mixin btn2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.266667px;
+  color: #fff;
+}
+
+@mixin body {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 1px;
+  @include themeSetup.theme() {
+    color: themeSetup.theme-get("text-color");
+  }
+}

@@ -1,0 +1,73 @@
+$themes: (
+  defaultTheme: (
+    "background-color": #3a4663,
+    "calc-background-color": #181f33,
+    "display-color": #181f33,
+    "btn-1-color": #eae3dc,
+    "btn-1-hover-color": #FFFFFE,
+    "btn-2-color": #647198,
+    "btn-2-hover-color": #A2B2E1,
+    "btn-3-color": #d03f2f,
+    "btn-3-hover-color": #F96B5B,
+    "text-color": #ffffff,
+    "btn-text-color": #434a59,
+    "switch-color": #d03f2f,
+    "box-shadow": inset 0px -4px 0px #B3A497,
+    "box-shadow-2": inset 0px -4px 0px #414E73,
+    "box-shadow-3":  inset 0px -4px 0px #93261A,
+    "is-pressed-color":	#808080
+  ),
+  lightTheme: (
+    "background-color": #e6e6e6,
+    "calc-background-color": #d2cdcd,
+    "display-color": #eeeeee,
+    "btn-1-color": #e5e4e1,
+    "btn-1-hover-color": #FFFFFF,
+    "btn-2-color": #378187,
+    "btn-2-hover-color": #62B5BC,
+    "btn-3-color": #c85402,
+    "btn-3-hover-color": #FF8A38,
+    "text-color": #36362c,
+    "btn-text-color": #36362c,
+    "switch-color": #c85402,
+    "box-shadow": inset 0px -4px 0px #A79E91,
+    "box-shadow-2": inset 0px -4px 0px #1B6066,
+    "box-shadow-3": inset 0px -4px 0px #873901,
+    "is-pressed-color":	#8c8c8c
+  ),
+  darkTheme: (
+    "background-color": #17062a,
+    "calc-background-color": #1e0936,
+    "display-color": #1e0936,
+    "btn-1-color": #331c4d,
+    "btn-1-hover-color": #6C34AC,
+    "btn-2-color": #56077c,
+    "btn-2-hover-color": #8631AF,
+    "btn-3-color": #00ded0,
+    "btn-3-hover-color": #93FFF8,
+    "text-color": #ffe53d,
+    "btn-text-color": #ffe53d,
+    "switch-color": #00ded0,
+    "box-shadow": inset 0px -4px 0px #B3A497,
+    "box-shadow-2": inset 0px -4px 0px #BE15F4,
+    "box-shadow-3": inset 0px -4px 0px #6CF9F1,
+    "is-pressed-color":	#46334d
+
+  )
+);
+
+$theme-map: null;
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
