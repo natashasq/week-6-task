@@ -1,3 +1,10 @@
+
+@mixin smallScreen {
+  @media screen and (max-width: 350px) {
+    @content;
+  }
+}
+
 @mixin desktopScreen {
   @media screen and (min-width: 1000px) {
     @content;

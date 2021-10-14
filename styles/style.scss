@@ -33,6 +33,11 @@ body {
   width: 327px;
   display: flex;
   justify-content: space-between;
+  @include responsive.smallScreen {
+    width: 290px;
+  margin: 0 auto;
+
+  }
   @include responsive.desktopScreen {
     padding-top: 96px;
     margin: 0 auto;
@@ -100,6 +105,10 @@ body {
   flex-direction: column;
   margin: 0 24px 31px 24px;
   width: 327px;
+  @include responsive.smallScreen {
+    width: 290px;
+    margin: 0 12px 15px 12px;
+  }
   @include responsive.desktopScreen {
     margin: 0 40px 90px 40px;
     width: 540px;
@@ -114,6 +123,9 @@ body {
     margin-bottom: 24px;
     @include fonts.h1;
     padding: 26px 24px;
+    @include responsive.smallScreen {
+      width: 290px;
+    }
     @include responsive.desktopScreen {
       font-size: 48px;
       line-height: 54px;
@@ -126,15 +138,19 @@ body {
       background-color: themeSetup.theme-get("calc-background-color");
     }
     border-radius: 10px;
-    @include responsive.desktopScreen {
-      padding: 32px;
-    }
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     column-gap: 13px;
     row-gap: 13px;
     margin-bottom: 13px;
+    @include responsive.smallScreen {
+      column-gap: 8px;
+      row-gap: 8px;
+    }
+    @include responsive.desktopScreen {
+      padding: 32px;
+    }
   }
   &__btn {
     height: 64px;
@@ -153,6 +169,11 @@ body {
       @include themeSetup.theme() {
         background-color: themeSetup.theme-get("btn-1-hover-color");
       }
+    }
+    @include responsive.smallScreen {
+      height: 44px;
+      width: 100%;
+      padding: 5px 5px 7px 5px;
     }
     @include responsive.desktopScreen {
       width: 101px;
@@ -216,10 +237,9 @@ body {
   display: none;
 }
 .-lightTheme {
-margin-left: 21px;
+  margin-left: 21px;
 }
 
-.-darkTheme{
+.-darkTheme {
   margin-left: 42px;
-  }
-
+}
