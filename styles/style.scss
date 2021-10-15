@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   @include themeSetup.theme() {
     background-color: themeSetup.theme-get("background-color");
   }
@@ -36,6 +36,9 @@ body {
   @include responsive.smallScreen {
     width: 290px;
     margin: 0 auto;
+  }
+  @include responsive.tabletScreen {
+    padding-top: 96px;
   }
   @include responsive.desktopScreen {
     padding-top: 96px;
