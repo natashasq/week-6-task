@@ -62,10 +62,12 @@ keys.addEventListener("click", e => {
         previousKeyType === "operator" ||
         previousKeyType === "calculate"
       ) {
-        return (display.textContent = keyContent);
+        console.log("ovo", previousKeyType);
+        display.textContent = keyContent;
+      } else {
+        console.log("ovo 2");
+        display.textContent = displayedNumber + keyContent;
       }
-      return (display.textContent = displayedNumber + keyContent);
-
       calculator.dataset.previousKeyType = "number";
     }
 
@@ -177,5 +179,3 @@ const toggleTheme = () => {
 };
 
 toggle.addEventListener("click", toggleTheme);
-
-

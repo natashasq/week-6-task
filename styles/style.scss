@@ -13,15 +13,15 @@ html {
   height: 100%;
 }
 body {
-  height: 100%;
+  height: 100vh;
   max-width: 100%;
 }
 
 .wrapper {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
   @include themeSetup.theme() {
     background-color: themeSetup.theme-get("background-color");
   }
@@ -35,8 +35,7 @@ body {
   justify-content: space-between;
   @include responsive.smallScreen {
     width: 290px;
-  margin: 0 auto;
-
+    margin: 0 auto;
   }
   @include responsive.desktopScreen {
     padding-top: 96px;
