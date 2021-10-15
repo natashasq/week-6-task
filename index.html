@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Calculator</title>
+  </head>
+  <body class="defaultTheme">
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="header__logo">calc</h1>
+        <div class="header__theme">
+          <p class="header__theme-text">theme</p>
+          <div class="header__theme-toggle-wrapper">
+            <div class="header__theme-toggle-numbers">
+              <p class="header__theme-toggle-no">1</p>
+              <p class="header__theme-toggle-no">2</p>
+              <p class="header__theme-toggle-no">3</p>
+            </div>
+            <div class="header__theme-toggle-switch" id="toggle-switch">
+              <div class="header__theme-toggle-btn -defaultTheme" id="switch-1"></div>
+              <div
+                class="header__theme-toggle-btn -lightTheme -display-none "
+                id="switch-2"
+              ></div>
+              <div
+                class="header__theme-toggle-btn -darkTheme -display-none "
+                id="switch-3"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="calc" id="calculator">
+        <form>
+          <div class="calc__display" id="calculator-display">0</div>
+          <div class="calc__buttons-container" id="keys-container">
+            <button class="calc__btn" data-number>7</button>
+            <button class="calc__btn" data-number>8</button>
+            <button class="calc__btn" data-number>9</button>
+            <button class="calc__btn -btn-2" data-operation="delete">
+              del
+            </button>
+            <button class="calc__btn" data-number>4</button>
+            <button class="calc__btn" data-number>5</button>
+            <button class="calc__btn" data-number>6</button>
+            <button class="calc__btn" data-operation="add">+</button>
+            <button class="calc__btn" data-number>1</button>
+            <button class="calc__btn" data-number>2</button>
+            <button class="calc__btn" data-number>3</button>
+            <button class="calc__btn" data-operation="substract">-</button>
+            <button class="calc__btn" data-operation="decimal">.</button>
+            <button class="calc__btn" data-number>0</button>
+            <button class="calc__btn" data-operation="divide">/</button>
+            <button class="calc__btn" data-operation="multiply">x</button>
+            <button class="calc__btn -btn-2 -reset" data-operation="reset">
+              reset
+            </button>
+            <button class="calc__btn -btn-3" data-operation="calculate">
+              =
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+  <script type="text/javascript" src="app.js"></script>
+</html>
